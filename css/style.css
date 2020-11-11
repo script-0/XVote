@@ -8,7 +8,7 @@
 	}
 	
 	#position{
-		display:none;
+		display:flex;
 	}
 	
 	#back{

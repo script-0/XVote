@@ -19,16 +19,16 @@
        <?php include ('side_bar.php');?>
         <!-- Page Content -->
         <div id="page-wrapper">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <h3 class="page-header">Registration</h3>
                 </div>
-				<div class = "well col-lg-5">
+				<div class = "col-lg-5" style="margin-right:auto;">
 					<div class="panel panel-green">
                         <div class="panel-heading">
                             Please Enter the Detail Needed Below
                         </div>
-                        <div class="panel-body">
+                        <div class="panel-body" >
                          <form method = "post" enctype = "multipart/form-data">	
 											<div class="form-group">
 												<label>ID Number</label>
@@ -114,7 +114,6 @@
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
-
     </div>
     <!-- /#wrapper -->
 <?php include ('script.php');?>

@@ -6,8 +6,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="" style = "color:white;"> Automated Voting System</a>
-					
+                <a class="navbar-brand" href="" style = "color:white;"> Automated Voting System</a>			
             </div>
       
 
@@ -15,13 +14,13 @@
             
 				<?php 
 					require 'admin/dbcon.php';
-					$query = $conn->query("SELECT * from voters where voters_id ='$_SESSION[id]'")or die (mysqli_errno ());
+					$query = $conn->query("SELECT * from voters where voters_id ='$_SESSION[id]'")or die (mysqli_errno());
 					$row = $query->fetch_array();
 				?>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style = "color:white;font-size:14pt;">
+                <li class="dropdown" >
+                    <h1 class="dropdown-toggle" data-toggle="dropdown" href="" style = "color:white;font-size:14pt;">
 						<i class="fa fa-arrow fa-fw"></i>Welcome: <?php echo $row['firstname']." ".$row['lastname'];?>
-					</a>
+                    </h1>
                 </li>
             </ul>
             
