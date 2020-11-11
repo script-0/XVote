@@ -8,13 +8,12 @@
                 </button>
                 <a class="navbar-brand" href="" style = "color:white;"> Automated Voting System</a>			
             </div>
-      
 
             <ul class="nav navbar-top-links navbar-right">
             
 				<?php 
 					require 'admin/dbcon.php';
-					$query = $conn->query("SELECT * from voters where voters_id ='$_SESSION[id]'")or die (mysqli_errno());
+					$query = $conn->query("SELECT * from voters where voters_id ='".$_SESSION['voters_id']."'")or die (mysqli_errno());
 					$row = $query->fetch_array();
 				?>
                 <li class="dropdown" >

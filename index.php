@@ -33,7 +33,7 @@
 							
 									<?php include ('login_query.php');?>
                         </form>
-                        <h4><b>Note:</b> <i>One voter can only vote/login one time!!</i> </h4>
+                        <h4><b>Note:</b> <i>One voter can only vote one time!!</i> </h4>
                     </div>
                 </div>
             </div>

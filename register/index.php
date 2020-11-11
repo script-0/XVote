@@ -84,7 +84,7 @@
 									$password = $_POST['password'];
 
 
-									$query = $conn->query("SELECT * FROM voters WHERE id_number='$id_number'") or die (mysql_error());
+									$query = $conn->query("SELECT * FROM voters WHERE id_number='$id_number'") or die (mysqli_errno());
 									$count = $query->fetch_array();
 
 									if ($count  > 0){ 

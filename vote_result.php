@@ -8,13 +8,13 @@
 			include ('side_bar.php');
 			if(ISSET($_POST['submit']))
 				{
-					if(!ISSET($_POST['pres_id']))
+					if(!ISSET($_POST['president_id']))
 					{
-						$_SESSION['pres_id'] = "";
+						$_SESSION['president_id'] = "";
 					}
 					else
 					{
-						$_SESSION['pres_id'] = $_POST['pres_id'];
+						$_SESSION['president_id'] = $_POST['president_id'];
 					}
 					if(!ISSET($_POST['vpinternal_id']))
 					{
@@ -105,13 +105,13 @@
 			<label>PRESIDENT</label>
 			<br />
 			<?php
-				if(!$_SESSION['pres_id'])
+				if(!$_SESSION['president_id'])
 					{
 						
 					}
 				else
 					{
-						$fetch = $conn->query("SELECT * FROM `candidate` WHERE `candidate_id` = '$_SESSION[pres_id]'")->fetch_array();
+						$fetch = $conn->query("SELECT * FROM `candidate` WHERE `candidate_id` = '$_SESSION[president_id]'")->fetch_array();
 						echo $fetch['firstname']." ".$fetch['lastname']." "."<img src = 'admin/".$fetch['img']."' style = 'height:80px; width:80px; border-radius:500px;' />"; 
 					}
 			?>
