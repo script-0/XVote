@@ -1,0 +1,34 @@
+/*checkbox style*/
+
+.fancyCheckbox input[type=checkbox], .fancyCheckbox input[type=radio] {
+    position: relative;
+    appearance: none;
+    font-family:FontAwesome;
+    font-size:2em;
+    margin: 0;
+    color: inherit;
+    outline: none;
+    transition: 300ms ease-out;
+}
+
+.fancyCheckbox input[type=checkbox]::after, .fancyCheckbox input[type=radio]::after {
+    content: '\f111';
+    display: inline-block;
+    text-align: center;
+}
+
+.fancyCheckbox input[type=checkbox]:checked::after, .fancyCheckbox input[type=radio]:checked::after {
+    font-weight: 900;
+}
+
+.fancyCheckbox input[type=checkbox]:active, .fancyCheckbox input[type=radio]:active {
+    transform: scale(0.6);
+}
+
+.fancyCheckbox input[type=checkbox]:checked::after {
+    content: '\f058';
+}
+
+.fancyCheckbox input[type=radio]:checked::after {
+    content: '\f192';
+}
