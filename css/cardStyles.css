@@ -1,3 +1,10 @@
+/* Center card of candidates */
+.rowCard{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Three columns side by side */
 .columnCard {
     float: left;
@@ -46,8 +53,15 @@
     justify-items: center;
     border-radius: 10px 10px 0 0;
     width: 100%;
+    transition: 300ms ease-out;
 }
 
 .voteCheck .vote_text{
     margin: 4px;
+}
+
+.voteCheck:hover{
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid rgb(16, 135, 156);
 }

@@ -36,7 +36,7 @@
 							<center><?php echo $postes_class[$index] ?></center>
 						</div>
 						<div class="panel-body">
-							<div class="row">
+							<div class="rowCard">
 								<?php
 								while ($fetch = $query->fetch_array()) {
 								?>
