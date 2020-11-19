@@ -10,32 +10,15 @@
 	<form method="POST" action="vote_result.php">
 		<!-- President -->
 		<?php
-		$postes = array(
-			'President',
-			'Vice President for Internal Affairs',
-			'Vice President for External Affairs',
-			'Secretary',
-			'Auditor',
-			'Treasurer',
-			'PIO',
-			'Business Manager',
-			'Sgt. @ Arms',
-			'Muse',
-			'Escort'
-		);
-
-		$postes_class = array('president', 'vpinternal', 'vpexternal', 'secretary', 'auditor', 'treasurer', 'pio', 'busman', 'sgtarm', 'muse', 'escort');
-
-		$nb_postes = count($postes);
-
-		for ($index = 0; $index < $nb_postes; $index++) {
-			$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = '" . $postes[$index] . "'") or die(mysqli_errno());
+		$postes = $conn->query("SELECT `name` , `class_name` FROM `postes`") or die(mysqli_errno());
+		while($poste = $postes->fetch_array()){
+			$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = '" . $poste['name'] . "'") or die(mysqli_errno());
 			if ($query->num_rows > 0) {
 		?>
 				<div class="col-lg-6">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<center><?php echo $postes_class[$index] ?></center>
+							<center><?php echo $poste['class_name'] ?></center>
 						</div>
 						<div class="panel-body">
 							<div class="rowCard">
@@ -49,7 +32,7 @@
 												<h2><?php echo $fetch['firstname'] . " " . $fetch['lastname'] ?></h2>
 												<p class="titleCard"><?php echo $fetch['year_level'] ?></p>
 												<div class="voteCheck fancyCheckbox" onclick="voteClicked(this)">
-													<span class="vote_text">Je vote </span><input onclick="(function(e) {e.stopPropagation();})(event)" type="checkbox" value="<?php echo $fetch['candidate_id'] ?>" name="<?php echo $postes_class[$index] . "_id" ?>" class="<?php echo $postes_class[$index] ?>">
+													<span class="vote_text">Je vote </span><input onclick="(function(e) {e.stopPropagation();})(event)" type="checkbox" value="<?php echo $fetch['candidate_id'] ?>" name="<?php echo $poste['class_name'] . "_id" ?>" class="<?php echo $poste['class_name'] ?>">
 												</div>
 											</div>
 										</div>
