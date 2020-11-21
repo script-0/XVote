@@ -30,7 +30,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	 <!-- Card Styles -->
-     <link href="css/cardStyles.css?1" rel="stylesheet" type="text/css">
+     <link href="css/cardStyles.css" rel="stylesheet" type="text/css">
 	 <!-- Checkbox-->
      <link href="css/checkbox.css" rel="stylesheet" type="text/css">
 

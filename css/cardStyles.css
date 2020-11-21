@@ -9,6 +9,7 @@
 .columnCard {
     float: left;
     margin-bottom: 16px;
+    width: 33.3%;
     border-radius: 10px 10px 0 0;
     padding: 0 8px;
   }
