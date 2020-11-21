@@ -41,17 +41,17 @@
 													$change =  passFunc(8, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890');
 											?>	
 												<label>Password</label>
-													<input class="form-control"  type = "text" name = "password" id = "pass" required="true" readonly="readonly" />
+													<input class="form-control"  type = "text" name = "password" id = "pass" required="true" />
 													<input type = "button" value = "Generate" onclick = "document.getElementById('pass').value = '<?php echo $change?>'">
 											</div>
 											
 											<div class="form-group">
 												<label>Firstname</label>
-													<input class="form-control" type ="text" name = "firstname" placeholder="Firstname" required="true">
+													<input class="form-control" type ="text" name = "firstname" placeholder="First name" required="true">
 											</div>
 											<div class="form-group">
 												<label>Lastname</label>
-													<input class="form-control"  type = "text" name = "lastname" placeholder="Please enter lastname" required="true">
+													<input class="form-control"  type = "text" name = "lastname" placeholder="Last name" required="true">
 											</div>
 											
 											<div class="form-group">
