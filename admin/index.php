@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row">
-		<center><h3>Automated Voting Sytem - Admin Panel</h3></center>
+		<center><h3>X-Voting Sytem - Admin Panel</h3></center>
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">

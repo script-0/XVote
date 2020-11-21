@@ -6,7 +6,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="" style = "color:white;"><i class = "fa fa-home fa-large" > </i>Automated Voting System</a>
+                <a class="navbar-brand" href="" style = "color:white;"><i class = "fa fa-home fa-large" > </i>X-Voting System</a>
 				
             </div>
       

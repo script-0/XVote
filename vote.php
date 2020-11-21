@@ -18,7 +18,7 @@
 				<div class="col-lg-6">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<center><?php echo $poste['class_name'] ?></center>
+							<center><?php echo $poste['name'] ?></center>
 						</div>
 						<div class="panel-body">
 							<div class="rowCard">

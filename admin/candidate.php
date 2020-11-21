@@ -39,7 +39,6 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                         
                                             <th>Position</th>
                                             <th>Firstname</th>
                                             <th>Lastname</th>
@@ -55,7 +54,8 @@
 										<?php 
 											require 'dbcon.php';
 											$bool = false;
-											$query = $conn->query("SELECT * FROM candidate ORDER BY candidate_id DESC");
+                                            $query = $conn->query("SELECT * FROM candidate ORDER BY candidate_id DESC");
+                                            if($query->num_rows > 0){
 												while($row = $query->fetch_array()){
 													$candidate_id=$row['candidate_id'];
 										?>
@@ -81,7 +81,7 @@
 												?>
                                         </tr>
 										
-                                       <?php } ?>
+                                       <?php }} ?>
                                     </tbody>
                                 </table>
                             </div>

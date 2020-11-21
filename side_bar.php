@@ -1,25 +1,28 @@
 <nav class="navbar navbar-default navbar-static-top navbar-primary navbar-fixed" role="navigation" style="margin-bottom:6px;background-color:lightslategrey;color:white;">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="" style = "color:white;"> Automated Voting System</a>			
-            </div>
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="" style="color:white;"> X-Voting System</a>
+    </div>
 
-            <ul class="nav navbar-top-links navbar-right">
-            
-				<?php 
-					require 'admin/dbcon.php';
-					$query = $conn->query("SELECT * from voters where voters_id ='".$_SESSION['voters_id']."'")or die (mysqli_errno());
-					$row = $query->fetch_array();
-				?>
-                <li class="dropdown" >
-                    <h1 class="dropdown-toggle" data-toggle="dropdown" href="" style = "color:white;font-size:14pt;">
-						<i class="fa fa-arrow fa-fw"></i>Welcome: <?php echo $row['firstname']." ".$row['lastname'];?>
-                    </h1>
-                </li>
-            </ul>
-            
+    <ul class="nav navbar-top-links navbar-right">
+
+        <?php
+        require 'admin/dbcon.php';
+        try {
+            $query = $conn->query("SELECT * from voters where voters_id ='" . $_SESSION['voters_id'] . "'");
+        } catch (Exception $e) {
+            echo 'Error occured : Please reload page';
+        }
+        $row = $query->fetch_array();
+        ?>
+        <li class="dropdown">
+            <h1 class="dropdown-toggle" data-toggle="dropdown" href="" style="color:white;font-size:14pt;">
+                <i class="fa fa-arrow fa-fw"></i>Welcome: <?php echo $row['firstname'] . " " . $row['lastname']; ?>
+            </h1>
+        </li>
+    </ul>
