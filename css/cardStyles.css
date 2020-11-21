@@ -37,7 +37,11 @@
     display: table;
   }
 
-.titleCard {
+.containerCard .nameCard{
+  font-size:17px;
+}
+
+.containerCard .levelCard {
     color: grey;
   }
 

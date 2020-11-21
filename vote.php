@@ -29,8 +29,8 @@
 										<div class="card">
 											<img src="admin/<?php echo $fetch['img'] ?>">
 											<div class="containerCard">
-												<h2><?php echo $fetch['firstname'] . " " . $fetch['lastname'] ?></h2>
-												<p class="titleCard"><?php echo $fetch['year_level'] ?></p>
+												<h2 class="nameCard"><?php echo $fetch['firstname'] . " " . $fetch['lastname'] ?></h2>
+												<p class="levelCard"><?php echo $fetch['year_level'] ?></p>
 												<div class="voteCheck fancyCheckbox" onclick="voteClicked(this)">
 													<span class="vote_text">Je vote </span><input onclick="(function(e) {e.stopPropagation();})(event)" type="checkbox" value="<?php echo $fetch['candidate_id'] ?>" name="<?php echo $poste['class_name'] . "_id" ?>" class="<?php echo $poste['class_name'] ?>">
 												</div>
