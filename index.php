@@ -4,8 +4,8 @@
         <div class="row">
 		
 		<center><h3>Automated Voting Sytem</h3></center>
-            <div class="col-md-4 col-md-offset-4">
-			
+        <center> <img src="./images/logo.jpg" alt="Logo" width="150px" style="border-radius: 15px;margin-bottom:-10px;"/></center>
+            <div class="col-md-4 col-md-offset-4">			
                 <div class="login-panel panel panel-default">
 				
                     <div class="panel-heading">
