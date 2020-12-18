@@ -8,14 +8,13 @@
 		<?php include('side_bar.php'); ?>
 	</div>
 	<form method="POST" action="vote_result.php">
-		<!-- President -->
 		<?php
 		$postes = $conn->query("SELECT `name` , `class_name` FROM `postes`") or die(mysqli_errno());
 		while($poste = $postes->fetch_array()){
 			$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = '" . $poste['name'] . "'") or die(mysqli_errno());
 			if ($query->num_rows > 0) {
 		?>
-				<div class="col-lg-6">
+				<div class="col-lg-12">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<center><?php echo $poste['name'] ?></center>
@@ -32,7 +31,7 @@
 												<h2 class="nameCard"><?php echo $fetch['firstname'] . " " . $fetch['lastname'] ?></h2>
 												<p class="levelCard"><?php echo $fetch['year_level'] ?></p>
 												<div class="voteCheck fancyCheckbox" onclick="voteClicked(this)">
-													<span class="vote_text">Je vote </span><input onclick="(function(e) {e.stopPropagation();})(event)" type="checkbox" value="<?php echo $fetch['candidate_id'] ?>" name="<?php echo $poste['class_name'] . "_id" ?>" class="<?php echo $poste['class_name'] ?>">
+													<span class="vote_text">Je vote </span><input onclick="(function(e) {e.stopPropagation();})(event)" type="checkbox" value="<?php echo $fetch['candidate_id']; ?>" name="<?php echo $poste['class_name'] . "_id"; ?>" class="<?php echo $poste['class_name']; ?>">
 												</div>
 											</div>
 										</div>
@@ -48,7 +47,7 @@
 			}
 		}
 		?>
-		<center><button class="btn btn-success ballot" type="submit" name="submit">Submit Ballot</button></center>
+		<center><button style="margin-bottom:20px;" class="btn btn-success ballot" type="submit" name="submit">Submit Ballot</button></center>
 	</form>
 </body>
 <?php include('script.php') ?>

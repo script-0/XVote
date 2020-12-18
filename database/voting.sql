@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2018 at 05:39 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: Dec 18, 2020 at 07:35 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,24 +26,52 @@ SET time_zone = "+00:00";
 -- Table structure for table `candidate`
 --
 
-USE `voting`;
 CREATE TABLE IF NOT EXISTS `candidate` (
-`candidate_id` int(11) NOT NULL,
+  `candidate_id` int(11) NOT NULL AUTO_INCREMENT,
   `position` varchar(100) NOT NULL,
   `firstname` varchar(100) NOT NULL,
   `lastname` varchar(100) NOT NULL,
   `year_level` varchar(100) NOT NULL,
   `gender` varchar(100) NOT NULL,
-  `img` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `img` varchar(100) NOT NULL,
+  PRIMARY KEY (`candidate_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `candidate`
 --
 
 INSERT INTO `candidate` (`candidate_id`, `position`, `firstname`, `lastname`, `year_level`, `gender`, `img`) VALUES
-(1, 'President', 'Harry', 'Den', '4th Year', 'Male', 'upload/male3.jpg'),
-(2, 'Secretary', 'James', 'Corden', '3rd Year', 'Male', 'upload/male3.jpg');
+(3, 'Secrétaire Général', 'Mouen', 'Kevin', '4th Year', 'Homme', 'upload/male3.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `postes`
+--
+
+CREATE TABLE IF NOT EXISTS `postes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `class_name` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`,`class_name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `postes`
+--
+
+INSERT INTO `postes` (`id`, `name`, `class_name`) VALUES
+(1, 'President', 'president'),
+(2, 'Vice President 1', 'vp1'),
+(3, 'Vice President 2', 'vp2'),
+(4, 'Secrétaire Général', 'sgr'),
+(5, 'Secrétaire Général Adjoint', 'sga'),
+(6, 'Commisaire aux comptes', 'commisaire'),
+(7, 'Trésorier', 'tresorier'),
+(8, 'Censeur 1', 'censeur1'),
+(9, 'Censeur 2', 'censeur2');
 
 -- --------------------------------------------------------
 
@@ -52,19 +80,20 @@ INSERT INTO `candidate` (`candidate_id`, `position`, `firstname`, `lastname`, `y
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-`user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `firstname` varchar(100) NOT NULL,
-  `lastname` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `lastname` varchar(100) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `firstname`, `lastname`) VALUES
-(1, 'admin', 'admin', 'Harry', 'Den');
+(1, 'admin', 'admin', 'Isaac', 'Ndema');
 
 -- --------------------------------------------------------
 
@@ -73,23 +102,23 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `firstname`, `lastname`) 
 --
 
 CREATE TABLE IF NOT EXISTS `voters` (
-`voters_id` int(11) NOT NULL,
-  `id_number` int(11) NOT NULL,
+  `voters_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_number` varchar(6) NOT NULL,
   `password` varchar(100) NOT NULL,
   `firstname` varchar(100) NOT NULL,
   `lastname` varchar(100) NOT NULL,
   `year_level` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL,
-  `account` varchar(100) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `account` varchar(100) NOT NULL,
+  PRIMARY KEY (`voters_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `voters`
 --
 
 INSERT INTO `voters` (`voters_id`, `id_number`, `password`, `firstname`, `lastname`, `year_level`, `status`, `account`) VALUES
-(1, 21241523, '8CCADFqy', 'Christine', 'Grey', '3rd Year', 'Unvoted', 'Active'),
-(2, 6666, 'vTSNuAQt', 'Harry', 'Den', '4th Year', 'Voted', 'Active');
+(11, '17P123', '@pass', 'Isaac', 'Ndema', '4th Year', 'Voted', 'Active');
 
 -- --------------------------------------------------------
 
@@ -98,80 +127,12 @@ INSERT INTO `voters` (`voters_id`, `id_number`, `password`, `firstname`, `lastna
 --
 
 CREATE TABLE IF NOT EXISTS `votes` (
-`vote_id` int(255) NOT NULL,
+  `vote_id` int(255) NOT NULL AUTO_INCREMENT,
   `candidate_id` varchar(255) NOT NULL,
-  `voters_id` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+  `voters_id` varchar(255) NOT NULL,
+  PRIMARY KEY (`vote_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
---
--- Dumping data for table `votes`
---
-
-INSERT INTO `votes` (`vote_id`, `candidate_id`, `voters_id`) VALUES
-(1, '1', '2'),
-(2, '', '2'),
-(3, '', '2'),
-(4, '2', '2'),
-(5, '', '2'),
-(6, '', '2'),
-(7, '', '2'),
-(8, '', '2'),
-(9, '', '2'),
-(10, '', '2'),
-(11, '', '2');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `candidate`
---
-ALTER TABLE `candidate`
- ADD PRIMARY KEY (`candidate_id`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
- ADD PRIMARY KEY (`user_id`);
-
---
--- Indexes for table `voters`
---
-ALTER TABLE `voters`
- ADD PRIMARY KEY (`voters_id`);
-
---
--- Indexes for table `votes`
---
-ALTER TABLE `votes`
- ADD PRIMARY KEY (`vote_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `candidate`
---
-ALTER TABLE `candidate`
-MODIFY `candidate_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `voters`
---
-ALTER TABLE `voters`
-MODIFY `voters_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `votes`
---
-ALTER TABLE `votes`
-MODIFY `vote_id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

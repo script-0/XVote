@@ -23,7 +23,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header">Registration</h3>
                 </div>
-				<div class = "col-lg-5" style="margin-right:auto;">
+				<div class = "col-lg-5">
 					<div class="panel panel-green">
                         <div class="panel-heading">
                             Please Enter the Detail Needed Below
@@ -31,7 +31,7 @@
                         <div class="panel-body" >
                          <form method = "post" enctype = "multipart/form-data">	
 											<div class="form-group">
-												<label>ID Number</label>
+												<label>Matricule</label>
 												<input class ="form-control" type = "text" name = "id_number" placeholder = "ID number" required="true">
 													
 											</div>
@@ -40,29 +40,29 @@
 											<?php 
 													$change =  passFunc(8, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890');
 											?>	
-												<label>Password</label>
-													<input class="form-control"  type = "text" name = "password" id = "pass" required="true" />
+												<label>Mot de Passe</label>
+													<input class="form-control"  type = "text" name = "password" id = "pass" required="true" placeholder="Password"/>
 													<input type = "button" value = "Generate" onclick = "document.getElementById('pass').value = '<?php echo $change?>'">
 											</div>
 											
 											<div class="form-group">
-												<label>Firstname</label>
+												<label>Prénom</label>
 													<input class="form-control" type ="text" name = "firstname" placeholder="First name" required="true">
 											</div>
 											<div class="form-group">
-												<label>Lastname</label>
+												<label>Nom</label>
 													<input class="form-control"  type = "text" name = "lastname" placeholder="Last name" required="true">
 											</div>
 											
 											<div class="form-group">
-												<label>Year_Level</label>
+												<label>Niveau</label>
 													<select class = "form-control" name = "year_level">
 														<option></option>
 														<option>1st Year</option>
 														<option>2nd Year</option>
 														<option>3rd Year</option>
 														<option>4th Year</option>
-														
+														<option>5th Year</option>														
 													</select>
 											</div>
 																	
@@ -99,6 +99,7 @@
 									?>
 									<script>
 										alert('Voters Successfully Save');
+										window.location.assign("http://localhost:81/XVote/");
 									</script>
 							<?php
 									}

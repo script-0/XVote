@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="" style="color:white;"> X-Voting System</a>
+        <a class="navbar-brand" href="" style="color:white;"> CESA Voting System</a>
     </div>
 
     <ul class="nav navbar-top-links navbar-right">
