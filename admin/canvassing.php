@@ -7,14 +7,7 @@
 
 		<!-- Navigation -->
 		
-		<?php 
-			if( !isset($_GET['token'])  || $_GET['token'] != "CESAGI2022"){
-				include ('side_bar.php');
-		?>
-			<script> document.title="CESA Voting System"</script>
-		<?php
-			}
-		?>
+		<?php include ('side_bar.php'); ?>
 
         <!-- Page Content -->
         <div id="page-wrapper">
@@ -26,7 +19,7 @@
 						<h4 class = "alert alert-success">Canvassing Report</h4>	
 					</div>						
 					<br/>
-                    <form method="post" action="sort.php?token=CESAGI2022">
+                    <form method="post" action="sort.php">
 						<select name="position" id="position" class = "form-control pull-left" style = "width:300px;margin-left:19px; ">
 							<option readonly>----Sort by Position----</option>
 							<?php

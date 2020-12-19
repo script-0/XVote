@@ -1,4 +1,4 @@
-<?php	include('head.php');
+<?php	include('voteHead.php');
 		include('sess.php');
 		include('./admin/dbcon.php');
 ?>

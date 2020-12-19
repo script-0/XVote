@@ -1,0 +1,62 @@
+@import url(./partials/_variables.css);
+
+.reportBar{
+    padding: 5px;
+}
+
+.bar{
+    background:#353b48;
+    display:block;
+    height:4px;
+    /*border: 1.5px solid rgba(0,0,0,0.3);*/
+    border-radius: 3px;
+    overflow:hidden;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.bar span{
+    height:4px;
+    float:left;
+    background:var(--gradient-color);
+}
+
+.skill-per{
+    height: 20px;
+    width:0%; 
+    position: relative;
+    transition:1.5s linear;
+}
+
+.skill-per::before{
+    content:attr(per);
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width:32px;
+    position: absolute;
+    background: var(--gradient-color);
+    color:#fff;
+    font-size:12px;
+    top:-26px;
+    right:0;
+    z-index: 2;
+    transform: translateX(50%);
+}
+
+.skill-per::after{
+    content:"";
+    position: absolute;
+    width:10px;
+    height:10px;
+    background-color: var(--primary-color2);
+    top:-16px;
+    right:0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+    z-index: 0;
+}
+
+.value{
+    transition:0.5s linear;
+}

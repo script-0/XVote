@@ -4,9 +4,7 @@
 <body>
 
 	<script src="js/voteCard.js"></script>
-	<div id="wrapper">
-		<?php include('side_bar.php'); ?>
-	</div>
+	<?php include('side_bar.php'); ?>
 	<form method="POST" action="vote_result.php" class="rootContainer">
 		<?php
 		$postes = $conn->query("SELECT `name` , `class_name` FROM `postes`") or die(mysqli_errno());

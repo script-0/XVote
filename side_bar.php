@@ -1,28 +1,27 @@
-<nav class="navbar navbar-default navbar-static-top navbar-primary navbar-fixed" role="navigation" style="margin-bottom:6px;background-color:lightslategrey;color:white;">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="" style="color:white;"> CESA Voting System</a>
+<div class="userNavbar">
+    <div class="title">
+        <a class="titleName" href=""> CESA Voting System</a>
     </div>
 
-    <ul class="nav navbar-top-links navbar-right">
+    <div class="navbarImg">
+        <img src="./images/vote.png" alt="Logo"/>
+    </div>
 
+    <div class="user">
+        
+        <h1 class="username">
         <?php
         require 'admin/dbcon.php';
         try {
-            $query = $conn->query("SELECT * from voters where voters_id ='" . $_SESSION['voters_id'] . "'");
-        } catch (Exception $e) {
-            echo 'Error occured : Please reload page';
-        }
-        $row = $query->fetch_array();
+            $query = $conn->query("SELECT firstname , lastname from voters where voters_id ='" . $_SESSION['voters_id'] . "'");
+            $row = $query->fetch_array();
         ?>
-        <li class="dropdown">
-            <h1 class="dropdown-toggle" data-toggle="dropdown" href="" style="color:white;font-size:14pt;">
-                <i class="fa fa-arrow fa-fw"></i>Welcome: <?php echo $row['firstname'] . " " . $row['lastname']; ?>
-            </h1>
-        </li>
-    </ul>
+             <i class="fa fa-arrow fa-fw"></i>Welcome: <?php echo $row['firstname'] . " " . $row['lastname']; ?>
+        <?php
+        } catch (Exception $e) {
+            echo '<i class="fa fa-arrow fa-fw"></i>Error occured : Please reload page';
+        }
+        ?>               
+        </h1>
+    </div>
+</div>

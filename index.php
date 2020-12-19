@@ -2,10 +2,9 @@
 <body>
     <div class="container">
         <div class="row">
-		
-		<center><h3>CESA Voting Sytem</h3></center>
-        <center> <img src="./images/logo.jpg" alt="Logo" width="150px" style="border-radius: 15px;margin-bottom:-10px;"/></center>
-            <div class="col-md-4 col-md-offset-4">			
+        <center> <img src="./images/vote.png" alt="Logo" width="80px" style="margin-top:10px;"/></center>
+        <center><h3 style="margin-bottom:-40px;">CESA Voting Sytem</h3></center>    
+        <div class="col-md-4 col-md-offset-4">			
                 <div class="login-panel panel panel-default">
 				
                     <div class="panel-heading">

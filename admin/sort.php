@@ -5,15 +5,7 @@
 <body>
 
     <div id="wrapper">
-		<?php 
-			if( !isset($_GET['token'])  || $_GET['token'] != "CESAGI2022"){
-				include ('side_bar.php');
-			}else{
-		?>
-			<script> document.title="CESA Voting System";</script>
-		<?php
-			}
-		?>
+		<?php include ('side_bar.php'); ?>
 
         <!-- Page Content -->
         <div id="page-wrapper">

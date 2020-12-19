@@ -1,0 +1,53 @@
+@import url(./partials/_variables.css);
+
+.userNavbar{
+    display: flex;
+    justify-content:center ;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 10px;
+}
+
+.title a{
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.title a:hover{
+    color:var(--primary-color);
+    text-decoration: solid;
+}
+
+.navbarImg{
+    flex: 1;
+    text-align: center;
+}
+
+.userNavbar img{
+    width:50px;
+    margin-top:-10px;
+}
+
+.titleName{
+    font-size: 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.user{
+    text-align: right;
+}
+
+.username{
+    margin-top: 4px;
+    font-size: 22px;
+    color:var(--primary-color);
+}
+
+.navbarRay{
+    color: black;
+    width:30%;
+}
