@@ -10,7 +10,7 @@
 				include ('side_bar.php');
 			}else{
 		?>
-			<script> document.title="CESA Voting System"</script>
+			<script> document.title="CESA Voting System";</script>
 		<?php
 			}
 		?>

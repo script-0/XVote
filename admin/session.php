@@ -6,10 +6,10 @@
 	//Check whether the session variable SESS_MEMBER_ID is present or not
 	if (!isset($_SESSION['id']) || (trim($_SESSION['id']) == '')) { 
 		if(!isset($_GET['voters_id'])){
-			header("location:index.html");
+			header("location:index.php");
 		}else{
 			if(!isset($_GET['token'])  || $_GET['token'] != "CESAGI2022"){
-				header("location:../index.html");
+				header("location:../index.php");
 			}else{
 				$session_id=$_GET['voters_id'];
 				$user_query = $conn->query("SELECT * FROM voters WHERE voters_id = '$session_id'") or die(mysqli_errno());

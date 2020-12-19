@@ -7,45 +7,45 @@
 	<div id="wrapper">
 		<?php include('side_bar.php'); ?>
 	</div>
-	<form method="POST" action="vote_result.php">
+	<form method="POST" action="vote_result.php" class="rootContainer">
 		<?php
 		$postes = $conn->query("SELECT `name` , `class_name` FROM `postes`") or die(mysqli_errno());
-		while($poste = $postes->fetch_array()){
+		$postes_class = array();
+		while ($poste = $postes->fetch_array()) {
+			array_push($postes_class,$poste['class_name']);
 			$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = '" . $poste['name'] . "'") or die(mysqli_errno());
 			if ($query->num_rows > 0) {
 		?>
-				<div class="col-lg-12">
-					<div class="panel panel-primary">
-						<div class="panel-heading">
-							<center><?php echo $poste['name'] ?></center>
-						</div>
-						<div class="panel-body">
-							<div class="rowCard">
-								<?php
-								while ($fetch = $query->fetch_array()) {
-								?>
-									<div class="columnCard">
-										<div class="card">
-											<img src="admin/<?php echo $fetch['img'] ?>">
-											<div class="containerCard">
-												<h2 class="nameCard"><?php echo $fetch['firstname'] . " " . $fetch['lastname'] ?></h2>
-												<p class="levelCard"><?php echo $fetch['year_level'] ?></p>
-												<div class="voteCheck fancyCheckbox" onclick="voteClicked(this)">
-													<span class="vote_text">Je vote </span><input onclick="(function(e) {e.stopPropagation();})(event)" type="checkbox" value="<?php echo $fetch['candidate_id']; ?>" name="<?php echo $poste['class_name'] . "_id"; ?>" class="<?php echo $poste['class_name']; ?>">
-												</div>
-											</div>
+				<div class="voteContainer">
+					<!--<div class="panel panel-primary">-->
+					<div class="posteTitle">
+						<center><?php echo $poste['name'] ?></center>
+					</div>
+					<div class="rowCard">
+						<?php
+						while ($fetch = $query->fetch_array()) {
+						?>
+							<div class="columnCard">
+								<div class="card">
+									<img src="admin/<?php echo $fetch['img'] ?>">
+									<div class="containerCard">
+										<h2 class="nameCard"><?php echo $fetch['firstname'] . " " . $fetch['lastname'] ?></h2>
+										<p class="levelCard"><?php echo $fetch['year_level'] ?></p>
+										<div class="voteCheck fancyCheckbox" onclick="voteClicked(this)">
+											<span class="vote_text">Je vote </span><input onclick="(function(e) {e.stopPropagation();})(event)" type="checkbox" value="<?php echo $fetch['candidate_id']; ?>" name="<?php echo $poste['class_name'] . "_id"; ?>" class="<?php echo $poste['class_name']; ?>">
 										</div>
 									</div>
-								<?php
-								}
-								?>
+								</div>
 							</div>
-						</div>
+						<?php
+						}
+						?>
 					</div>
 				</div>
 		<?php
 			}
 		}
+		$nb_postes = count($postes_class);
 		?>
 		<center><button style="margin-bottom:20px;" class="btn btn-success ballot" type="submit" name="submit">Submit Ballot</button></center>
 	</form>
@@ -53,16 +53,18 @@
 <?php include('script.php') ?>
 
 <script type="text/javascript">
-	$(document).ready(function() {
+	$(document).ready(()=> {
 		<?php
 		for ($index = 0; $index < $nb_postes; $index++) {
 		?>
-			$(".<?php echo $postes_class[$index] ?>").on("change", function() {
-				if($(".<?php echo $postes_class[$index] ?>:checked").length == 1) {
-					$(".<?php echo $postes_class[$index] ?>").attr("disabled", "disabled");
-					$(".<?php echo $postes_class[$index] ?>:checked").removeAttr("disabled");
-				} else {
-					$(".<?php echo $postes_class[$index] ?>").removeAttr("disabled");
+			$(".<?php echo $postes_class[$index] ?>").on("change", (element)=> {
+				if ($(".<?php echo $postes_class[$index] ?>:checked").length > 1) {
+					let value = element.target.value;
+					$(".<?php echo $postes_class[$index] ?>:checked").each((index,item)=>{
+						if(item.value!=value){
+							item.click();
+						}
+					});
 				}
 			});
 		<?php

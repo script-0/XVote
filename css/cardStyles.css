@@ -1,3 +1,31 @@
+@import url(./partials/_variables.css);
+
+/* Root */
+.rootContainer{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+
+/*  Poste Block  */
+.voteContainer{
+  width: 80%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color:#f5f1f1;
+}
+
+/* Poste Name */
+.posteTitle{
+  border-radius: 10px 10px 0 0;
+  padding: 5px;
+  margin-bottom : 10px;
+  background-color:rgb(16, 135, 156);
+  color:white;
+}
+
 /* Center card of candidates */
 .rowCard{
   display:flex;
@@ -9,7 +37,7 @@
 .columnCard {
     float: left;
     margin-bottom: 16px;
-    width: 33.3%;
+    width: 25%;
     border-radius: 10px 10px 0 0;
     padding: 0 8px;
   }
@@ -18,10 +46,11 @@
   .card {
     border-radius: 10px 10px 0 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /*display: flex;*/
   }
   
   .card img{
-    width:100%;
+    width:100%; /*width:50%;*/
     border-radius: 10px 10px 0 0;
   }
 
