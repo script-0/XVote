@@ -1,30 +1,34 @@
 <?php
-	if (!isset($_GET['token'])  || $_GET['token'] != "CESAGI2022") {
-		header("location:index.php");
-	}
-	include('voteHead.php');
-	require 'admin/dbcon.php';
-	session_start();
+if (!isset($_GET['token'])  || $_GET['token'] != "CESAGI2022") {
+	header("location:index.php");
+}
+include('voteHead.php');
+require 'admin/dbcon.php';
+session_start();
 ?>
 
 <body>
 
 	<script src="js/voteCard.js"></script>
 	<?php include('side_bar_anonyme_user.php'); ?>
-	<form method="POST" action="vote_result.php" class="rootContainer">
+	<form method="POST" action="results.php?token=CESAGI2022" class="rootContainer">
+
+		<div class="refreshDiv">
+			<button class="refreshButton" type="submit" name="submit"><i class = "fa fa-refresh fa-large" ></i>  Refresh</button>
+		</div>
 		<?php
 		$postes = $conn->query("SELECT `name` , `class_name` FROM `postes`") or die(mysqli_errno());
 		$postes_class = array();
 		while ($poste = $postes->fetch_array()) {
 			$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = '" . $poste['name'] . "'") or die(mysqli_errno());
 			if ($query->num_rows > 0) {
-				$queryVote = $conn->query("SELECT count(*) as total FROM `votes` WHERE `poste_class_name` = '".$poste['class_name']."'") or die(mysqli_errno());
+				$queryVote = $conn->query("SELECT count(*) as total FROM `votes` WHERE `poste_class_name` = '" . $poste['class_name'] . "'") or die(mysqli_errno());
 				$total = $queryVote->fetch_array();
 		?>
 				<div class="voteContainer">
 					<!--<div class="panel panel-primary">-->
 					<div class="posteTitle">
-						<center><?php echo $poste['name']." ( ".$total['total']." Votes )"; ?></center>
+						<center><?php echo $poste['name'] . " ( " . $total['total'] . " Votes )"; ?></center>
 					</div>
 					<div class="rowCard">
 						<?php
@@ -58,7 +62,6 @@
 			}
 		}
 		?>
-		<center><button style="margin-bottom:20px;" class="btn btn-success ballot" type="submit" name="submit">Submit Ballot</button></center>
 	</form>
 </body>
 <?php include('script.php') ?>
@@ -66,7 +69,6 @@
 	$('.skill-per').each(function() {
 		var $this = $(this);
 		var value = ($(this).parent().children()[0]).childNodes[1];
-		console.log(value);
 		var per = $this.attr('per');
 		$this.css("width", per + '%');
 		$({

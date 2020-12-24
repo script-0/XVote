@@ -3,7 +3,7 @@
 .userNavbar{
     display: flex;
     justify-content:center ;
-    align-items: flex-start;
+    align-items: center;
     padding: 20px;
     background-color: white;
     box-shadow: var(--box-shadow);
@@ -13,7 +13,6 @@
 .title a{
     display: flex;
     align-items: center;
-    margin-top: 4px;
 }
 
 .title a:hover{
@@ -23,7 +22,9 @@
 
 .navbarImg{
     flex: 1;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items:  center;
 }
 
 .userNavbar img{
@@ -47,7 +48,35 @@
     color:var(--primary-color);
 }
 
-.navbarRay{
-    color: black;
-    width:30%;
+@media screen and (max-width:780px){
+    .username{
+        font-size: 16px;
+    }
+    .titleName{
+        font-size:16px;
+    }
+}
+
+@media screen and (max-width:460px){
+    .username{
+        font-size: 14px;
+    }
+    .titleName{
+        font-size:14px;
+    }
+}
+
+@media screen and (max-width:397px){
+    .user{
+        display: none;
+    }
+
+    .title{
+        display: none;
+    }
+
+    .navbarImg{
+        text-align: center;
+        width: 40px;
+    }
 }

@@ -7,10 +7,9 @@
         <img src="./images/vote.png" alt="Logo"/>
     </div>
 
-    <div class="user">
-        
-        <h1 class="username">
-            <i class="fa fa-arrow fa-fw"></i>Welcome: Anonyme User              
-        </h1>
+    <div class="user">        
+        <span class="username">
+            <i class="fa fa-arrow fa-fw"></i>Vote Results
+        </span>
     </div>
 </div>
