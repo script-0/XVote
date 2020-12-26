@@ -36,6 +36,6 @@
 	 <!-- Checkbox-->
      <link href="css/checkbox.css" rel="stylesheet" type="text/css">
      <!-- Report styles -->
-     <link href="css/report.css?1" rel="stylesheet" type="text/css">
+     <link href="css/report.css?12" rel="stylesheet" type="text/css">
 	 
 </head

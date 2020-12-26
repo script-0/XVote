@@ -6,7 +6,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="" style = "color:white;"><i class = "fa fa-home fa-large" > </i>X-Voting System</a>
+                <a class="navbar-brand" href="" style = "color:white;"><i class = "fa fa-home fa-large" > </i>CESA Voting System</a>
 				
             </div>
       
@@ -65,7 +65,7 @@
                         </li>
 						
                         <li>
-                            <a href="canvassing.php"><i class="fa fa-download fa-fw"></i> Canvassing Report</a>
+                            <a target="blank" href="../results.php?token=CESAGI2022"><i class="fa fa-download fa-fw"></i> Canvassing Report</a>
                         </li>
                        
                        

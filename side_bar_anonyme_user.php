@@ -9,7 +9,7 @@
 
     <div class="user">        
         <span class="username">
-            <i class="fa fa-arrow fa-fw"></i>Vote Results
+            <i class="fa fa-arrow fa-large"></i>Vote Results
         </span>
     </div>
 </div>

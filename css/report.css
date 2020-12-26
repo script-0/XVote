@@ -17,7 +17,7 @@
 .bar span {
     height: 4px;
     float: left;
-    background: var(--gradient-color);
+    background: var(--primary-color);
 }
 
 .skill-per {
@@ -35,7 +35,7 @@
     margin: auto;
     width: 32px;
     position: absolute;
-    background: var(--gradient-color);
+    background: var(--primary-color);
     color: #fff;
     font-size: 12px;
     top: -26px;
@@ -49,7 +49,7 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: var(--primary-color2);
+    background-color: var(--primary-color);
     top: -16px;
     right: 0;
     transform: translateX(50%) rotate(45deg);
@@ -69,7 +69,7 @@
 
 .refreshButton {
     margin-bottom: 20px;
-    background-color: #c7bcbc;
+    background-color: white;
     border-radius: 20px;
     border-style: none;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
