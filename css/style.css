@@ -1,17 +1,37 @@
-@media print{
-	#print{
-		display:none;
+input:required:focus{
+	border: 1px solid rgb(33,198,104);
+}
+
+.loginButton {
+	Width: 100%;
+	text-align: center;
+	border-radius: 5px;
+	padding: 5px;
+	color:rgba(16, 135, 100, 1);
+	background: white;
+	font-weight: bold;
+	font-size: 18px;
+	border: 1px solid rgb(33,198,104);
+	outline: none;
+	transition: .6s ease-in-out;
+}
+
+.loginButton:hover{
+	background: linear-gradient(90deg, rgba(33, 198, 104, 1) 0%, rgba(16, 135, 100, 1) 100%);
+	color:white;
+}
+
+@media print {
+	#print {
+		display: none;
 	}
-	
-	#sort{
-		display:none;
+	#sort {
+		display: none;
 	}
-	
-	#position{
-		display:flex;
+	#position {
+		display: flex;
 	}
-	
-	#back{
-		display:none;
+	#back {
+		display: none;
 	}
 }

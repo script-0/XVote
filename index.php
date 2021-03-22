@@ -5,9 +5,11 @@
         <center> <img src="./images/vote.png" alt="Logo" width="80px" style="margin-top:10px;"/></center>
         <center><h3 style="margin-bottom:-40px;">CESA Voting Sytem</h3></center>    
         <div class="col-md-4 col-md-offset-4">			
-                <div class="login-panel panel panel-default">
+                <div class="login-panel panel panel-default" style="border: 1px solid rgb(33,198,104);">
 				
-                    <div class="panel-heading">
+                    <div class="panel-heading" style="
+	background: linear-gradient(90deg, rgba(33, 198, 104, 1) 0%, rgba(16, 135, 100, 1) 100%);
+	color:white;">
                         <center><h3 class="panel-title"> Log In</h3></center>
                     </div>
                     <div class="panel-body">
@@ -25,7 +27,9 @@
                                 </div>
                              
                               
-                                <button class="btn btn-lg btn-success btn-block " name = "login">Login</a>
+                                <button class="loginButton" name = "login">
+                                    Login
+                                </button>
 								
 								
                             </fieldset>

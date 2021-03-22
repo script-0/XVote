@@ -13,7 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+	<link rel = "stylesheet" type = "text/css" href = "css/style.css?2" />
     <!-- MetisMenu CSS -->
     <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
@@ -30,4 +30,4 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	
-</head
+</head>

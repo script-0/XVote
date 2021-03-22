@@ -3,12 +3,12 @@
 	session_start();
 	session_destroy();
 		$postes = $conn->query("SELECT `class_name` FROM `postes`") or die(mysqli_errno());
-		$tmp;
-		while ($poste = $postes->fetch_array()) {			
+		$posteID; //Don't delete 
+		while ($poste = $postes->fetch_array()){
 			$posteClassName = $poste['class_name'];
 			if( isset( $_SESSION[ $posteClassName . "_id"] ) && $_SESSION[ $posteClassName. "_id"] !=""){
-				$tmp = $_SESSION[ $posteClassName. "_id"];
-				$conn->query("INSERT INTO `votes` VALUES('', '$tmp', '$_SESSION[voters_id]','$posteClassName')") or die(mysql_error());
+				$posteID = $_SESSION[ $posteClassName. "_id"];
+				$conn->query("INSERT INTO `votes` VALUES('', '$posteID', '$_SESSION[voters_id]','$posteClassName')") or die(mysql_error());
 			}else{
 				$conn->query("INSERT INTO `votes` VALUES('', -1, '$_SESSION[voters_id]','$posteClassName')") or die(mysql_error());
 			}
