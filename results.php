@@ -17,10 +17,10 @@ session_start();
 			<button class="refreshButton" type="submit" name="submit"><i class = "fa fa-refresh fa-large" ></i>  Refresh</button>
 		</div>
 		<?php
-		$postes = $conn->query("SELECT `name` , `class_name` FROM `postes`") or die(mysqli_errno());
+		$postes = $conn->query("SELECT `id`, `name` , `class_name` FROM `postes`") or die(mysqli_errno());
 		$postes_class = array();
 		while ($poste = $postes->fetch_array()) {
-			$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = '" . $poste['name'] . "'") or die(mysqli_errno());
+			$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = '" . $poste['id'] . "'") or die(mysqli_errno());
 			if ($query->num_rows > 0) {
 				$queryVote = $conn->query("SELECT count(*) as total FROM `votes` WHERE `poste_class_name` = '" . $poste['class_name'] . "'") or die(mysqli_errno());
 				$total = $queryVote->fetch_array();
