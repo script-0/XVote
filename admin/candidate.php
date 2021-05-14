@@ -58,9 +58,14 @@
                                             if($query->num_rows > 0){
 												while($row = $query->fetch_array()){
 													$candidate_id=$row['candidate_id'];
+
+                                                    $poste_id = $row ['position'];
+                                                    $poste = $conn->query("SELECT name FROM postes WHERE id = '$poste_id'")->fetch_array() or die(mysql_error());
+				                                    $poste_name = $poste['name'];
+				
 										?>
 											
-											<td><?php echo $row ['position'];?></td>
+											<td><?php echo $poste_name;?></td>
                                             <td><?php echo $row ['firstname'];?></td>
                                             <td><?php echo $row ['lastname'];?></td>
                                             <td><?php echo $row ['year_level'];?></td>

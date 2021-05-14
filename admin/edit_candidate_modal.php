@@ -22,7 +22,7 @@
 					<div class="form-group">
 						<label>Position</label>
 						<select class = "form-control" name = "position">
-								<option><?php echo $row ['position'];?></option>
+								<option><?php echo $poste_name;?></option>
 								<?php
 								require_once 'dbcon.php';
 								$postes = $conn->query("SELECT name FROM postes") or die(mysqli_errno());
@@ -99,9 +99,10 @@
 			$image_size= getimagesize($_FILES['image']['tmp_name']);
 			move_uploaded_file($_FILES["image"]["tmp_name"],"upload/" . $_FILES["image"]["name"]);			
 			$location="upload/" . $_FILES["image"]["name"];
-		
-	
-			$conn->query("UPDATE candidate SET position = '$position', firstname = '$firstname', lastname = '$lastname', year_level = '$year_level', gender = '$gender',img='$location' WHERE candidate_id = '$candidate_id'")or die(mysql_error());
+			$poste = $conn->query("SELECT id FROM postes WHERE name = '$position'")->fetch_array() or die(mysql_error());
+			$poste_id = $poste['id'];
+
+			$conn->query("UPDATE candidate SET position = '$poste_id', firstname = '$firstname', lastname = '$lastname', year_level = '$year_level', gender = '$gender',img='$location' WHERE candidate_id = '$candidate_id'") or die(mysql_error());
 			echo "<script> window.location='candidate.php' </script>";
 		}	
 	?>

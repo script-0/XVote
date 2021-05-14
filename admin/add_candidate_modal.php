@@ -90,8 +90,9 @@
 				move_uploaded_file($_FILES["image"]["tmp_name"], "upload/" . $_FILES["image"]["name"]);
 				$location = "upload/" . $_FILES["image"]["name"];
 
-
-				$conn->query("INSERT INTO candidate(position,firstname,lastname,year_level,gender,img)values('$position','$firstname','$lastname','$year_level','$gender','$location')") or die(mysql_error());
+				$poste = $conn->query("SELECT id FROM postes WHERE name = '$position'")->fetch_array() or die(mysql_error());
+				$poste_id = $poste['id'];
+				$conn->query("INSERT INTO candidate(position,firstname,lastname,year_level,gender,img)values('$poste_id','$firstname','$lastname','$year_level','$gender','$location')") or die(mysql_error());
 			}
 			?>
 		</div>
