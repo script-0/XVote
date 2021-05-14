@@ -15,15 +15,15 @@
 					<div class="form-group">
 						<label>Position</label>
 						<select class="form-control" name="position">
-							<option></option>
+							<option>Select a position</option>
 							<?php
 								require_once 'dbcon.php';
 								$postes = $conn->query("SELECT name FROM postes") or die(mysqli_errno());
 								while ($poste = $postes->fetch_array()) {
-								?>
+							?>
 									<option><?php echo $poste['name'] ?></option>
 							<?php
-							}
+								}
 							?>
 						</select>
 					</div>

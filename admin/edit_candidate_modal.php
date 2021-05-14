@@ -23,20 +23,15 @@
 						<label>Position</label>
 						<select class = "form-control" name = "position">
 								<option><?php echo $row ['position'];?></option>
-								<option>President</option>
-								<option>Vice President for Internal Affairs</option>
-								<option>Vice President for External Affairs</option>
-								<option>Secretary</option>
-								<option>Auditor</option>
-								<option>Treasurer</option>
-								<option>PIO</option>
-								<option>Business Manager</option>
-								<option>Sgt. @ Arms</option>
-								<option>Muse</option>
-								<option>Escort</option>
-								
-								
-							
+								<?php
+								require_once 'dbcon.php';
+								$postes = $conn->query("SELECT name FROM postes") or die(mysqli_errno());
+								while ($poste = $postes->fetch_array()) {
+								?>
+										<option><?php echo $poste['name'] ?></option>
+								<?php
+									}
+								?>
 							</select>
 							
 					</div>
