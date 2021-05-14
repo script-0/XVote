@@ -10,7 +10,7 @@
                     <div class="panel-heading" style="
 	background: linear-gradient(90deg, rgba(33, 198, 104, 1) 0%, rgba(16, 135, 100, 1) 100%);
 	color:white;">
-                        <center><h3 class="panel-title"> Log In</h3></center>
+                        <center><h3 class="panel-title"> Identification </h3></center>
                     </div>
                     <div class="panel-body">
                         <form role="form" method = "post" enctype = "multipart/form-data">
@@ -36,7 +36,6 @@
 							
 									<?php include ('login_query.php');?>
                         </form>
-                        <h4><b>Note:</b> <i>One voter can only vote one time!!</i> </h4>
                     </div>
                 </div>
             </div>

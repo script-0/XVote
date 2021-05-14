@@ -4,3 +4,4 @@ Add modal for login errors
 Modify "Submit Ballot" button on vote.php , vote_result.php
 Integrate XApp/XLogin 
 Deploy
+Revoke token
