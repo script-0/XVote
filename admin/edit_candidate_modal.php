@@ -69,7 +69,7 @@
 					</div>
 					<div class="form-group">
 									<label>Image</label>
-									<input type="file" name="image"required> 
+									<input type="file" name="image"> 
 					</div>
 					<button name = "update" type="submit" class="btn btn-primary">Save Data</button>
 				</form>
@@ -93,16 +93,20 @@
 			$lastname=$_POST['lastname'];
 			$year_level=$_POST['year_level'];
 			$gender=$_POST['gender'];
-			$candidate_id=$_POST['candidate_id'];
-			$image= addslashes(file_get_contents($_FILES['image']['tmp_name']));
-			$image_name= addslashes($_FILES['image']['name']);
-			$image_size= getimagesize($_FILES['image']['tmp_name']);
-			move_uploaded_file($_FILES["image"]["tmp_name"],"upload/" . $_FILES["image"]["name"]);			
-			$location="upload/" . $_FILES["image"]["name"];
+			$candidate_id=$_POST['candidate_id'];			
 			$poste = $conn->query("SELECT id FROM postes WHERE name = '$position'")->fetch_array() or die(mysql_error());
 			$poste_id = $poste['id'];
 
-			$conn->query("UPDATE candidate SET position = '$poste_id', firstname = '$firstname', lastname = '$lastname', year_level = '$year_level', gender = '$gender',img='$location' WHERE candidate_id = '$candidate_id'") or die(mysql_error());
+			if( !empty($_FILES['image']['name']) ){
+				$image= addslashes(file_get_contents($_FILES['image']['tmp_name']));
+				$image_name= addslashes($_FILES['image']['name']);
+				$image_size= getimagesize($_FILES['image']['tmp_name']);
+				move_uploaded_file($_FILES["image"]["tmp_name"],"upload/" . $_FILES["image"]["name"]);			
+				$location="upload/" . $_FILES["image"]["name"];
+				$conn->query("UPDATE candidate SET position = '$poste_id', firstname = '$firstname', lastname = '$lastname', year_level = '$year_level', gender = '$gender',img='$location' WHERE candidate_id = '$candidate_id'") or die(mysql_error());
+			}else{			
+				$conn->query("UPDATE candidate SET position = '$poste_id', firstname = '$firstname', lastname = '$lastname', year_level = '$year_level', gender = '$gender' WHERE candidate_id = '$candidate_id'") or die(mysql_error());
+			}
 			echo "<script> window.location='candidate.php' </script>";
 		}	
 	?>
