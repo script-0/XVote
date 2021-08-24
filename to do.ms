@@ -5,3 +5,8 @@ Modify "Submit Ballot" button on vote.php , vote_result.php
 Integrate XApp/XLogin 
 Deploy
 Revoke token
+
+
+# For deployment
+
+- Change absolute path in scripts/script.php
