@@ -1,4 +1,6 @@
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<?php require_once '../database/dbcon.php'; ?>
+
+<div class="modal fade" id="addCandidateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -17,7 +19,6 @@
 						<select class="form-control" name="position">
 							<option>Select a position</option>
 							<?php
-								require_once '../database/dbcon.php';
 								$postes = $conn->query("SELECT name FROM postes") or die(mysqli_errno());
 								while ($poste = $postes->fetch_array()) {
 							?>
@@ -72,8 +73,6 @@
 			</div>
 			
 			<?php
-			require_once '../database/dbcon.php';
-
 			if (isset($_POST['save'])) {
 				$position = $_POST['position'];
 				$firstname = $_POST['firstname'];

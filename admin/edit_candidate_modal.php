@@ -1,7 +1,7 @@
 <?php
+require '../database/dbcon.php';
 if (!$bool) {
 ?>
-
 	<div class="modal fade" id="edit_candidate<?php echo $candidate_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -23,7 +23,6 @@ if (!$bool) {
 							<select class="form-control" name="position">
 								<option><?php echo $poste_name; ?></option>
 								<?php
-								require_once 'dbcon.php';
 								$postes = $conn->query("SELECT name FROM postes") or die(mysqli_errno());
 								while ($poste = $postes->fetch_array()) {
 								?>
@@ -34,7 +33,6 @@ if (!$bool) {
 							</select>
 
 						</div>
-
 
 						<div class="form-group">
 							<label>Firstname</label>
@@ -83,8 +81,6 @@ if (!$bool) {
 	<!-- /.modal-content -->
 
 	<?php
-	require '../database/dbcon.php';
-
 	if (isset($_POST['update'])) {
 		$bool = true;
 		$position = $_POST['position'];

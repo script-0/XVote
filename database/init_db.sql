@@ -34,30 +34,6 @@ CREATE DATABASE IF NOT EXISTS `cesa_vote`;
 
 USE `cesa_vote`;
 --
--- Table structure for table `candidate`
---
-
-CREATE TABLE IF NOT EXISTS `candidate` (
-  `candidate_id` int(11) NOT NULL AUTO_INCREMENT,
-  `position` varchar(100) NOT NULL,
-  `firstname` varchar(100) NOT NULL,
-  `lastname` varchar(100) NOT NULL,
-  `year_level` varchar(100) NOT NULL,
-  `gender` varchar(100) NOT NULL,
-  `img` varchar(100) NOT NULL,
-  PRIMARY KEY (`candidate_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `candidate`
---
-
-INSERT INTO `candidate` (`candidate_id`, `position`, `firstname`, `lastname`, `year_level`, `gender`, `img`) VALUES
-(3, 'Secrétaire Général', 'Mouen', 'Kevin', '4th Year', 'Homme', 'upload/male3.jpg');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `postes`
 --
 
@@ -83,6 +59,31 @@ INSERT INTO `postes` (`id`, `name`, `class_name`) VALUES
 (7, 'Trésorier', 'tresorier'),
 (8, 'Censeur 1', 'censeur1'),
 (9, 'Censeur 2', 'censeur2');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `candidate`
+--
+
+CREATE TABLE IF NOT EXISTS `candidate` (
+  `candidate_id` int(11) NOT NULL AUTO_INCREMENT,
+  `position` int(11) ,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
+  `year_level` varchar(100) NOT NULL,
+  `gender` varchar(100) NOT NULL,
+  `img` varchar(100) NOT NULL,
+  PRIMARY KEY (`candidate_id`),
+  FOREIGN KEY (`position`) REFERENCES `postes`(`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `candidate`
+--
+
+INSERT INTO `candidate` (`candidate_id`, `position`, `firstname`, `lastname`, `year_level`, `gender`, `img`) VALUES
+(3, 4, 'Mouen', 'Kevin', '4th Year', 'Homme', 'upload/male3.jpg');
 
 -- --------------------------------------------------------
 
@@ -129,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `voters` (
 --
 
 INSERT INTO `voters` (`voters_id`, `id_number`, `password`, `firstname`, `lastname`, `year_level`, `status`, `account`) VALUES
-(11, '17P123', '@pass', 'Isaac', 'Ndema', '4th Year', 'Voted', 'Active');
+(11, '17P123', '@pass', 'Isaac', 'Ndema', '4th Year', 'UnVoted', 'Active');
 
 -- --------------------------------------------------------
 
