@@ -7,5 +7,6 @@
 	
 	if(!$conn){
 		die("Error: Failed to connect to database");
+		echo "Error occured when connecting to database";
 	}
 ?>	
