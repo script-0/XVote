@@ -1,5 +1,5 @@
 <?php
-	require 'admin/dbcon.php';
+	require 'database/dbcon.php';
 	session_start(); 
 	
 	if(!ISSET($_SESSION['voters_id'])){

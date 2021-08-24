@@ -11,7 +11,7 @@
         
         <h1 class="username">
         <?php
-        require 'admin/dbcon.php';
+        require 'database/dbcon.php';
         try {
             $query = $conn->query("SELECT firstname , lastname from voters where voters_id ='" . $_SESSION['voters_id'] . "'");
             $row = $query->fetch_array();
