@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.1.14
--- http://www.phpmyadmin.net
---
--- Host: 127.0.0.1
--- Generation Time: Dec 18, 2020 at 07:35 PM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -140,10 +131,14 @@ INSERT INTO `voters` (`voters_id`, `id_number`, `password`, `firstname`, `lastna
 
 CREATE TABLE IF NOT EXISTS `votes` (
   `vote_id` int(255) NOT NULL AUTO_INCREMENT,
-  `candidate_id` varchar(255) NOT NULL,
-  `voters_id` varchar(255) NOT NULL,
-  `poste_class_name` varchar(255) NOT NULL,
-  PRIMARY KEY (`vote_id`)
+  `candidate_id` int(11),
+  `voters_id` int(11),
+  `poste_id` int(11),
+  PRIMARY KEY (`vote_id`),
+  FOREIGN KEY (`voters_id`) REFERENCES `voters`(`voters_id`),
+  FOREIGN KEY (`candidate_id`) REFERENCES `candidate`(`candidate_id`),
+  FOREIGN KEY (`poste_id`) REFERENCES `postes`(`id`)
+  
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
