@@ -60,8 +60,8 @@ if (!$bool) {
 							<select class="form-control" name="gender">
 								<option><?php echo $row['gender'] ?></option>
 								<option></option>
-								<option>Male</option>
-								<option>Female</option>
+								<option>Homme</option>
+								<option>Femme</option>
 							</select>
 						</div>
 						<div class="form-group">

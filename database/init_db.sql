@@ -142,6 +142,7 @@ CREATE TABLE IF NOT EXISTS `votes` (
   `vote_id` int(255) NOT NULL AUTO_INCREMENT,
   `candidate_id` varchar(255) NOT NULL,
   `voters_id` varchar(255) NOT NULL,
+  `poste_class_name` varchar(255) NOT NULL,
   PRIMARY KEY (`vote_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 

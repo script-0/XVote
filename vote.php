@@ -48,7 +48,7 @@
 		<center><button style="margin-bottom:20px;" class="btn btn-success ballot" type="submit" name="submit">Submit Ballot</button></center>
 	</form>
 </body>
-<?php include('script.php') ?>
+<?php include('scripts/script.php') ?>
 
 <script type="text/javascript">
 	$(document).ready(()=> {
