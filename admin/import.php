@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['submit'])) {
-	require_once 'dbcon.php';
+	require_once '../database/dbcon.php';
 	
 	if (is_uploaded_file($_FILES['filename']['tmp_name'])) {
 		echo "<h1>" . "File ". $_FILES['filename']['name'] ." Uploaded successfully." . "</h1>";

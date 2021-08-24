@@ -1,5 +1,5 @@
 <?php
-	require 'dbcon.php';
+	require '../database/dbcon.php';
 	session_start(); 
 	$session_id = "";
 	$user_query;

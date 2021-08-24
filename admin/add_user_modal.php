@@ -48,7 +48,7 @@
 										
 							<?php 
 										
-								require_once 'dbcon.php';
+								require_once '../database/dbcon.php';
 								if (isset($_POST['ok'])){
 								
 								$username=$_POST['username'];

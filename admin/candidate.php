@@ -52,7 +52,7 @@
 									
                                         <tr>
 										<?php 
-											require 'dbcon.php';
+											require '../database/dbcon.php';
 											$bool = false;
                                             $query = $conn->query("SELECT * FROM candidate ORDER BY candidate_id DESC");
                                             if($query->num_rows > 0){

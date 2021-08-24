@@ -17,7 +17,7 @@
 						<select class="form-control" name="position">
 							<option>Select a position</option>
 							<?php
-								require_once 'dbcon.php';
+								require_once '../database/dbcon.php';
 								$postes = $conn->query("SELECT name FROM postes") or die(mysqli_errno());
 								while ($poste = $postes->fetch_array()) {
 							?>
@@ -70,12 +70,9 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
 			</div>
-
-
-
-
+			
 			<?php
-			require_once 'dbcon.php';
+			require_once '../database/dbcon.php';
 
 			if (isset($_POST['save'])) {
 				$position = $_POST['position'];

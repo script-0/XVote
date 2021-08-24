@@ -1,5 +1,5 @@
 <?php
-	require_once 'admin/dbcon.php';
+	require_once 'database/dbcon.php';
 	
 	if(isset($_POST['login'])){
 		$idno=$_POST['idno'];

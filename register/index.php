@@ -74,7 +74,7 @@
 										</form>
 								
 							<?php 
-								require 'dbcon.php';
+								require '../database/dbcon.php';
 								
 								if (isset($_POST['save'])){
 									$firstname=$_POST['firstname'];
@@ -99,7 +99,7 @@
 									?>
 									<script>
 										alert('Voters Successfully Save');
-										window.location.assign("http://localhost:81/XVote/");
+										window.location.assign("http://localhost:80/XVote/");
 									</script>
 							<?php
 									}

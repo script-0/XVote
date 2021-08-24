@@ -54,7 +54,7 @@
 									
                                         <tr>
 										<?php 
-										include ('dbcon.php');
+										include ('../database/dbcon.php');
 										$query=mysql_query("SELECT * FROM candidate ORDER BY candidate_id DESC");
 										while($row = mysql_fetch_array($query)){
 										$candidate_id=$row['candidate_id'];
@@ -98,7 +98,7 @@
     </div>
     <!-- /#wrapper -->
 
-    <?php include ('script.php');?>
+    <?php include ('../scripts/script.php');?>
 
 </body>
 

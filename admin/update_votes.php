@@ -1,5 +1,5 @@
 <?php
-include ('dbcon.php');
+include ('../database/dbcon.php');
 if (isset ($_POST ['done'])){
 $voters_id = $_GET['voter_id'];
 $id_number=$_POST['id_number'];

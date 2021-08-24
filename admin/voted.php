@@ -62,7 +62,7 @@
 									
                                       
 										<?php 
-										require 'dbcon.php';
+										require '../database/dbcon.php';
 										$query = $conn->query("SELECT * FROM voters where status = 'Voted'");
 										while($row = $query->fetch_array()){
 											$voters_id=$row ['voters_id'];
@@ -95,7 +95,7 @@
     </div>
     <!-- /#wrapper -->
 
-    <?php include ('script.php');?>
+    <?php include ('../scripts/script.php');?>
     <?php include ('edit_voters_modal.php');?>
 	
 </body>
