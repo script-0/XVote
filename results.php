@@ -3,7 +3,7 @@ if (!isset($_GET['token'])  || $_GET['token'] != "CESAGI2022") {
 	header("location:index.php");
 }
 include('voteHead.php');
-require 'admin/dbcon.php';
+require 'database/dbcon.php';
 session_start();
 ?>
 
@@ -64,7 +64,7 @@ session_start();
 		?>
 	</form>
 </body>
-<?php include('script.php') ?>
+<?php include('scripts/script.php') ?>
 <script>
 	$('.skill-per').each(function() {
 		var $this = $(this);

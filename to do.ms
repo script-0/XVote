@@ -6,7 +6,6 @@ Integrate XApp/XLogin
 Deploy
 Revoke token
 
-
 # For deployment
 
 - Change absolute path in scripts/script.php
