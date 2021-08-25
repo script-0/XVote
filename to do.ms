@@ -5,6 +5,7 @@ Modify "Submit Ballot" button on vote.php , vote_result.php
 Integrate XApp/XLogin 
 Deploy
 Revoke token
+Manage errors on SQL Operations
 
 # For deployment
 

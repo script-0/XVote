@@ -1,11 +1,14 @@
-<?php include('head.php'); ?>
+<?php
+    require_once 'environnements/dev.php';
+    include('head.php');
+?>
 
 <body>
     <div class="container">
         <div class="row">
             <center> <img src="./images/vote.png" alt="Logo" width="80px" style="margin-top:10px;" /></center>
             <center>
-                <h3 style="margin-bottom:-40px;">CESA Voting Sytem</h3>
+                <h3 style="margin-bottom:-40px;"> <?php echo APP_NAME_USER ?> </h3>
             </center>
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default" style="border: 1px solid rgb(33,198,104);">

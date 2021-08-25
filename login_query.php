@@ -6,7 +6,7 @@
 	if(isset($_POST['login'])){
 		$idno=$_POST['idno'];
 		$password=$_POST['password'];
-		$result = $voter_repo->login($idno,$password);// $conn->query("SELECT voters_id, status, account FROM voters WHERE id_number = '$idno' && password = '$password'") or die(mysqli_errno());
+		$result = $voter_repo->login($idno,$password);
 		$numberOfRows = $result->num_rows;
 		if($numberOfRows > 0){
 			$row = $result->fetch_array();
