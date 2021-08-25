@@ -1,12 +1,12 @@
 <?php
 
     class DatabaseConnection{
-        public static $conn = null;
+        public static $connexion = null;
         public function load_db (){
-            if(is_null(self::$conn)){
-                self::$conn = new mysqli('127.0.0.1', 'root', 'password', 'cesa_vote');
+            if(is_null(self::$connexion)){
+                self::$connexion = new mysqli('127.0.0.1', 'root', 'password', 'cesa_vote');
             }
-            return self::$conn;
+            return self::$connexion;
         }
 
         function __construct(){

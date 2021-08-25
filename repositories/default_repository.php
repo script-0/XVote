@@ -1,5 +1,7 @@
 <?php
 
+    require_once 'database_connection.php';
+    
     class DefaultRepository
     {
         private $conn;

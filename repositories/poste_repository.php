@@ -1,5 +1,7 @@
 <?php
 
+    require_once 'default_repository.php';
+
     class PosteRepository extends DefaultRepository
     {
         function __construct()

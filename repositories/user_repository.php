@@ -1,5 +1,7 @@
 <?php
 
+    require_once 'default_repository.php';
+
     class UserRepository extends DefaultRepository
     {
         function __construct()

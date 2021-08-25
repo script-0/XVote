@@ -1,5 +1,6 @@
 <?php
-
+    require_once 'default_repository.php';
+    
     class CandidateRepository extends DefaultRepository
     {
         function __construct()
