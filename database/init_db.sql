@@ -16,8 +16,8 @@ SET time_zone = "+00:00";
 --
 -- Drop Database if exists and reCreate Database 
 --
-DROP DATABASE IF EXISTS `cesa_vote`;
-CREATE DATABASE IF NOT EXISTS `cesa_vote`;
+-- DROP DATABASE IF EXISTS `cesa_vote`;
+-- CREATE DATABASE IF NOT EXISTS `cesa_vote`;
 
 --
 -- Select database
