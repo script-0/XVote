@@ -4,7 +4,7 @@
         public static $connexion = null;
         public function load_db (){
             if(is_null(self::$connexion)){
-                self::$connexion = new mysqli('db4free.net', 'cesa_user', 'cesa_password', 'cesa_vote');
+                self::$connexion = new mysqli('remotemysql.com', 'Chu2uV1pit', 'JPWCBdTMWd', 'Chu2uV1pit');
             }
             return self::$connexion;
         }

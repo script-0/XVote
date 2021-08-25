@@ -23,7 +23,9 @@ SET time_zone = "+00:00";
 -- Select database
 --
 
-USE `cesa_vote`;
+-- USE `cesa_vote`;
+
+USE `Chu2uV1pit`;
 --
 -- Table structure for table `postes`
 --

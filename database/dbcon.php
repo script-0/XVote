@@ -1,6 +1,6 @@
 <?php
 	
-	$conn = new mysqli('db4free.net', 'cesa_user', 'cesa_password', 'cesa_vote');
+	$conn = new mysqli('remotemysql.com', 'Chu2uV1pit', 'JPWCBdTMWd', 'Chu2uV1pit');
 
 	//Local
 	//$conn = new mysqli('127.0.0.1', 'root', 'password', 'cesa_vote');

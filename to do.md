@@ -1,3 +1,4 @@
+- [ ] DB4free is extremly slow.
 - [ ] Change fontawesome to latest version and change all icons
 - [ ] Add cesa logo on all login pages
 - [ ] Add modal for login errors
