@@ -1,6 +1,7 @@
 <?php
 	require_once 'repositories/voter_repository.php';
-
+	require_once 'environnements/dev.php';
+	
 	$voter_repo = new VoterRepository();
 	
 	if(isset($_POST['login'])){
@@ -15,7 +16,7 @@
 						<center>
 							<font color= 'red' size='3'>You Can Only Vote Once</font>
 							<br>
-							Results Available <a href='results.php?token=CESAGI2022'> here </a>
+							Results Available <a href='" . RESULTS_LINK ."'> here </a>
 						</center>";
 				$isDisable = false;
 			}
@@ -24,7 +25,7 @@
 						<br>
 						<font color= 'red' size='3'>Your account is still inactive</font>
 						<br>
-						Results Available <a href='results.php?token=CESAGI2022'> here </a>
+						Results Available <a href='" . RESULTS_LINK ."'> here </a>
 				   </center>";
 			}
 			else{
@@ -37,7 +38,7 @@
 						<br>
 						<font color= 'red' size='3'>Bad Matricule / password </font>
 						<br>
-						Results Available <a href='results.php?token=CESAGI2022'> here </a>
+						Results Available <a href='" . RESULTS_LINK ."'> here </a>
 				   </center>";
 		}
 	}
