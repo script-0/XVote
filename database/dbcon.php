@@ -1,5 +1,5 @@
 <?php
-	//To Deploy
+	
 	$conn = new mysqli('db4free.net', 'cesa_user', 'cesa_password', 'cesa_vote');
 
 	//Local
