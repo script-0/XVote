@@ -4,6 +4,9 @@
 ?>
 
 <body>
+    <div class="small_size">
+        
+    </div>
     <div class="container">
         <div class="row">
             <center> <img src="./images/vote.png" alt="Logo" width="80px" style="margin-top:10px;" /></center>

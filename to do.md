@@ -14,3 +14,7 @@
 # For deployment
 
 - Change absolute path in scripts/script.php
+
+# Links
+
+- https://remotemysql.com/databases.php
