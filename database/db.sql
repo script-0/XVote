@@ -2,10 +2,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
---
--- Table structure for table `postes`
---
-USE `Chu2uV1pit`;
+--- USE `Chu2uV1pit`;
 
 DROP TABLE IF EXISTS `votes`;
 DROP TABLE IF EXISTS `candidate`;
