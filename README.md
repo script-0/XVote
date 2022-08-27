@@ -11,4 +11,3 @@ You can see this demo on <a href="https://youtu.be/CphTJS6LLXE" target="_blank" 
 
 ## TO DO
 - [ ] Hash password before saving them in BD
-- [ ] Update initial db script : remove database selection
