@@ -3,7 +3,7 @@ if (!isset($_GET['token'])  || $_GET['token'] != "CESAGI2022") {
 	header("location:index.php");
 }
 include('voteHead.php');
-require 'admin/dbcon.php';
+require 'database/dbcon.php';
 session_start();
 ?>
 
@@ -20,9 +20,9 @@ session_start();
 		$postes = $conn->query("SELECT `id`, `name` , `class_name` FROM `postes`") or die(mysqli_errno());
 		$postes_class = array();
 		while ($poste = $postes->fetch_array()) {
-			$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = '" . $poste['id'] . "'") or die(mysqli_errno());
+			$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = " . $poste['id']) or die(mysqli_errno());
 			if ($query->num_rows > 0) {
-				$queryVote = $conn->query("SELECT count(*) as total FROM `votes` WHERE `poste_class_name` = '" . $poste['class_name'] . "'") or die(mysqli_errno());
+				$queryVote = $conn->query("SELECT count(*) as total FROM `votes` WHERE `poste_id` = " . $poste['id'] . "") or die(mysqli_errno());
 				$total = $queryVote->fetch_array();
 		?>
 				<div class="voteContainer">
@@ -64,7 +64,7 @@ session_start();
 		?>
 	</form>
 </body>
-<?php include('script.php') ?>
+<?php include('scripts/script.php') ?>
 <script>
 	$('.skill-per').each(function() {
 		var $this = $(this);

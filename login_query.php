@@ -1,10 +1,13 @@
 <?php
-	require_once 'admin/dbcon.php';
+	require_once 'repositories/voter_repository.php';
+	require_once 'environnements/dev.php';
+	
+	$voter_repo = new VoterRepository();
 	
 	if(isset($_POST['login'])){
-		$idno=$_POST['idno'];
-		$password=$_POST['password'];
-		$result = $conn->query("SELECT voters_id, status, account, password FROM voters WHERE id_number = '$idno' ") or die('Unknown User.');
+		$idno = $_POST['idno'];
+		$password = $_POST['password'];
+		$result = $voter_repo->login($idno,$password);
 		$numberOfRows = $result->num_rows;
 		if($numberOfRows > 0){
 			$row = $result->fetch_array();
@@ -23,7 +26,7 @@
 						<center>
 							<font color= 'red' size='3'>You Can Only Vote Once</font>
 							<br>
-							Results Available <a href='results.php?token=CESAGI2022'> here </a>
+							Results Available <a href='" . RESULTS_LINK ."'> here </a>
 						</center>";
 				$isDisable = false;
 			}
@@ -32,7 +35,7 @@
 						<br>
 						<font color= 'red' size='3'>Your account is still inactive</font>
 						<br>
-						Results Available <a href='results.php?token=CESAGI2022'> here </a>
+						Results Available <a href='" . RESULTS_LINK ."'> here </a>
 				   </center>";
 			}
 			else{
@@ -45,7 +48,7 @@
 						<br>
 						<font color= 'red' size='3'>Bad Matricule / password </font>
 						<br>
-						Results Available <a href='results.php?token=CESAGI2022'> here </a>
+						Results Available <a href='" . RESULTS_LINK ."'> here </a>
 				   </center>";
 		}
 	}

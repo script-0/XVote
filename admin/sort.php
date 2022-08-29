@@ -1,6 +1,9 @@
 
-<?php include ('session.php');?>
-<?php include ('head.php');?>
+<?php 
+include ('session.php');
+include ('head.php');
+require ('../database/dbcon.php');
+?>
 
 <body>
 
@@ -46,9 +49,7 @@
 										<td style = "width:200px;"class = "alert alert-success">Image</td>
 										<td class = "alert alert-success">Total</td>
 									</thead>
-									<?php
-										require 'dbcon.php';
-										
+									<?php										
 										$position = $_POST['position'];
 										$sort = $position;
 										$query = $conn->query("SELECT * FROM candidate WHERE position = '$sort'");
@@ -71,7 +72,7 @@
             </div>
         </div>
     </div>
-    <?php include ('script.php');?>
+    <?php include ('../scripts/script.php');?>
 </body>
 </html>
 

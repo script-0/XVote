@@ -1,5 +1,16 @@
-<?php include('voteHead.php'); ?>
-<?php include("sess.php") ?>
+<?php 
+require('voteHead.php'); 
+
+require("sess.php"); 
+
+require_once 'repositories/poste_repository.php';
+require_once 'repositories/candidate_repository.php';
+require_once 'environnements/dev.php';
+
+$poste_repo = new PosteRepository();
+$candidate_repo = new CandidateRepository();
+
+?>
 
 <body>
 
@@ -7,11 +18,11 @@
 	<?php include('side_bar.php'); ?>
 	<form method="POST" action="vote_result.php" class="rootContainer">
 		<?php
-		$postes = $conn->query("SELECT `id`,  `name` , `class_name` FROM `postes`") or die(mysqli_errno());
+		$postes = $poste_repo->list();
 		$postes_class = array();
 		while ($poste = $postes->fetch_array()) {
 			array_push($postes_class,$poste['class_name']);
-			$query = $conn->query("SELECT * FROM `candidate` WHERE `position` = '" . $poste['id'] . "'") or die(mysqli_errno());
+			$query = $candidate_repo->get_by_poste($poste['id']);
 			if ($query->num_rows > 0) {
 		?>
 				<div class="voteContainer">
@@ -48,7 +59,7 @@
 		<center><button style="margin-bottom:20px;" class="btn btn-success ballot" type="submit" name="submit">Submit Ballot</button></center>
 	</form>
 </body>
-<?php include('script.php') ?>
+<?php include('scripts/script.php') ?>
 
 <script type="text/javascript">
 	$(document).ready(()=> {

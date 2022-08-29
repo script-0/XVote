@@ -53,7 +53,7 @@
 									
                                         <tr>
 										<?php 
-										require 'dbcon.php';
+										require '../database/dbcon.php';
 										$bool = false;
 										$query = $conn->query("SELECT * FROM user ORDER BY user_id DESC");
 										while($row = $query->fetch_array()){
@@ -95,7 +95,7 @@
     </div>
     <!-- /#wrapper -->
 
-    <?php include ('script.php');?>
+    <?php include ('../scripts/script.php');?>
 
 </body>
 

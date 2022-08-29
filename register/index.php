@@ -74,7 +74,7 @@
 										</form>
 								
 							<?php 
-								require 'dbcon.php';
+								require '../database/dbcon.php';
 								
 								if (isset($_POST['save'])){
 									$firstname=$_POST['firstname'];

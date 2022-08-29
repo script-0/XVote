@@ -1,6 +1,6 @@
 <?php	include('voteHead.php');
 		include('sess.php');
-		include('./admin/dbcon.php');
+		include('database/dbcon.php');
 ?>
 
 <body>
@@ -49,13 +49,13 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h4 class="modal-title" id="myModalLabel">
-
+						Submission Confirmation
 					</h4>
 				</div>
 
 
 				<div class="modal-body">
-					<p class="alert alert-danger">Are you sure you want to submit your Votes? </p>
+					<p class="alert alert-danger">Are you sure you want to submit your Vote? </p>
 				</div>
 
 				<div class="modal-footer">
@@ -68,6 +68,6 @@
 		<!-- /.modal-dialog -->
 	</div>
 </body>
-<?php include('script.php') ?>
+<?php include('scripts/script.php') ?>
 
 </html>
