@@ -1,9 +1,8 @@
 <?php
-	
-	$conn = new mysqli('remotemysql.com', 'Chu2uV1pit', 'JPWCBdTMWd', 'Chu2uV1pit');
 
-	//Local
-	//$conn = new mysqli('127.0.0.1', 'root', 'password', 'cesa_vote');
+	require_once '../environnements/db.php';
+	
+	$conn = new mysqli(DB_URL, DB_USER, DB_PASSWORD, DB_NAME);
 	
 	if(!$conn){
 		die("Error: Failed to connect to database");
