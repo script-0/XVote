@@ -58,11 +58,11 @@
 												<label>Niveau</label>
 													<select class = "form-control" name = "year_level">
 														<option></option>
-														<option>1st Year</option>
-														<option>2nd Year</option>
-														<option>3rd Year</option>
-														<option>4th Year</option>
-														<option>5th Year</option>														
+														<option value="1st Year">Niv 1</option>
+														<option value="2nd Year">Niv 2</option>
+														<option value="3rd Year">Niv 3</option>
+														<option value="4th Year">Niv 4</option>
+														<option value="5th Year">Niv 5</option>														
 													</select>
 											</div>
 																	
@@ -84,7 +84,7 @@
 									$password = $_POST['password'];
 
 
-									$query = $conn->query("SELECT * FROM voters WHERE id_number='$id_number'") or die (mysqli_errno());
+									$query = $conn->query("SELECT * FROM voters WHERE id_number='$id_number'") or die ("Something goes wrong");
 									$count = $query->fetch_array();
 
 									if ($count  > 0){ 
@@ -95,11 +95,12 @@
 									<?php
 										}
 										else{
-										$conn->query("insert into voters(id_number, password, firstname,lastname,year_level,status) VALUES('$id_number', '$password','$firstname','$lastname','$year_level','Unvoted')");
+											$hashedPassword = password_hash($password, PASSWORD_DEFAULT );
+											$conn->query("insert into voters(id_number, password, firstname,lastname,year_level,status) VALUES('$id_number','$hashedPassword' ,'$firstname','$lastname','$year_level','Unvoted')") or die (mysqli_error($conn));
 									?>
 									<script>
 										alert('Voters Successfully Save');
-										window.location.assign("http://localhost:80/XVote/");
+										window.location.assign("/XVote/");
 									</script>
 							<?php
 									}

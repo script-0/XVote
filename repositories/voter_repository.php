@@ -12,7 +12,7 @@
         //Login_query : 7
         function login($id_number, $password)
         {
-            return $this->get_conn()->query("SELECT voters_id, status, account FROM voters WHERE id_number = '$id_number' && password = '$password'");
+            return $this->get_conn()->query("SELECT voters_id, status, account, password FROM voters WHERE id_number = '$idno' ") or die('Unknown User.');
         }
 
         //side_bar : 16
